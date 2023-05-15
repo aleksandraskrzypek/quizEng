@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import "../style/englishQuiz.scss"
-import Dictionary from "../data/data.json"
+import Dictionary from "../data/dataa.json"
 
 function EnglishQuiz() {
     const [question, setQuestion] = useState()
@@ -9,9 +9,12 @@ function EnglishQuiz() {
     const [choices, setChoices] = useState([])
     const [step, setStep] = useState(3)
     const [score, setScore] = useState(0)
-    const[numbers, setNumbers] = useState([])
+    const [numbers, setNumbers] = useState([])
     const [shuffledChoices, setShuffledChoices] = useState([]);
 
+    useEffect (() => {
+        handleNext();
+    }, [])
 
     async function handleNext() {
         const newNumbers = await randomNumbersFour();
@@ -28,7 +31,7 @@ function EnglishQuiz() {
         const newNumbers = [];
       
         while (newNumbers.length < 4) {
-            const randomNumber = Math.floor(Math.random() * 102104);
+            const randomNumber = Math.floor(Math.random() * 924);
     
             if (!newNumbers.includes(randomNumber)) {
             newNumbers.push(randomNumber);
@@ -86,16 +89,16 @@ function EnglishQuiz() {
                 </ul> 
               
             </div> 
-            <div className='buttonNextContainer'>
+            {/* <div className='buttonNextContainer'>
                 <button className='buttonNext' onClick={() => handleNext()}>Next</button>
-            </div>
+            </div> */}
             </div>
             )
         } else if (step===2) {
             return (
                 <div className='componentBody'>
                     <div className='score'>
-                        <p>Your Score: {score}</p>
+                        <p>Your Score: <br />{score}</p>
                     </div>
                     <div className='tryAgain'>
                         <p>One more try?</p>
@@ -108,7 +111,7 @@ function EnglishQuiz() {
                 <div className='componentBody'>
                     <div className='startComponent'>
                         <p>Let's try your English!</p>
-                        <button className='buttonNext' onClick={() => handleStart()}>START</button>
+                        <button className='buttonNext start' onClick={() => handleStart()}>START</button>
                     </div>
                 </div>
             )

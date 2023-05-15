@@ -9,8 +9,8 @@
 }
 
 .componentBody{
-    width: 70vw;
-    height: 80vh;
+    width: 293px;
+    height: 675px;
     background-color: rgba(226, 230, 233, 0.152);
     border: none;
     border-radius: 18px;
@@ -19,7 +19,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-around;
+    //justify-content: space-around;
+
 
 }
 
@@ -28,6 +29,7 @@
     font-size: 50px;
     margin: 10px;
     color: rgb(208, 161, 60);
+    text-align: center;
 }
 
 .meaning{
@@ -38,6 +40,11 @@
 
     max-width: 70%;
     text-align: center;
+
+    height: 200px;
+    padding: 5px;
+    overflow: auto;
+
 }
 
 .answers{
@@ -76,18 +83,31 @@ li:hover{
 .buttonNext{
     background-color: rgb(208, 161, 60);
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     color: black;
+    font-weight: bold;
     font-family: 'Roboto Slab', serif;
+    font-size: 22px;
     padding: 8px;
-    width: 90px;
+    width: 150px;
+    height: 45px;
+    margin-top: 50px;
+    cursor: pointer;
+    transition: transform 3s; 
+}
+
+.buttonNext:hover{
+    transform: scale(1.5);
 }
 
 .tryAgain{
     font-family: 'Roboto Slab', serif;
-    font-size: 50px;
+    font-size: 44px;
     color: white;
     text-align: center;
+    margin-top: 100px;
+
+    width: 90%;
 }
 
 .startComponent{
@@ -95,4 +115,8 @@ li:hover{
     font-size: 50px;
     color: white;
     text-align: center;
+}
+
+.start{
+    margin-top: 250px;
 }
